@@ -75,7 +75,7 @@ const validation=()=>{
 
 	return (
 		<main className={styles.main}>
-			<h1><a href="/" className={styles.marketplace}>Luther Marketplace</a></h1>
+			<h1 className={styles.marketplace}><Link href="/">Luther Marketplace</Link></h1>
 			<div className={styles.upperbody}>
 			<div className={styles.welcomebox}>
 			<br></br>
@@ -144,7 +144,7 @@ const validation=()=>{
 			<div>{errors.password2}</div>
 				<br></br>
 				<button className={styles.submit} type="button" onClick={handleSubmit}>
-					Sign UP
+					SIGN UP
 				</button>
             	<h4 className={styles.h4txt}>Have an account?
 
@@ -159,5 +159,6 @@ const validation=()=>{
         	<img className={styles.structure} src="https://ak1.ostkcdn.com/images/products/is/images/direct/99e2126500ab99264a06f7bd2ddf7112a46dcb21/Art-Leon-Mid-century-3-seat-Sofa.jpg"></img>
     	</div>
 		</main>
+		
 	);
 }

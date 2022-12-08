@@ -1,29 +1,28 @@
-export * from './AddProducts.js';
+import { useState } from "react";
 import styles from "./Shop.module.css";
-import {fetcher} from "../../fetch/";
+import {fetcher,fetcher1} from "../../fetch/";
 import { useRouter } from 'next/router'
 import useSWR from "swr";
-import Image from 'next/image'
-import AddProducts from "./AddProducts.js";
-import Link from 'next/link'
-import Footer from "../../components/Footer/Footer.js";
-
-export function Shop() {
+import Image from "next/image";
+export default function Shop() {
 	const router=useRouter()
-	
-	const { data, error } = useSWR(["products/","GET"], fetcher);
+
+	const { data, error } = useSWR("products/", fetcher);
+	console.log(data)
 	if (!data) return "I am loading"
 	if (error) return "there is error"
-
-	const addProducts = (event) => {
-		event.preventDefault();
-		router.push('/add-products')
-	};
-
-	const priceascendingProducts = (event) => {
-		data.slice().sort((a, b) => b.product_date - a.product_date);
-	};
-
+	// const [fields, setFields] = useState({
+	// 	email: "",
+	// 	password: "",
+	// fetch("http://127.0.0.1:8000/api/products", {
+	// 	method: 'GET',
+	// })
+	// 	.then((res) => res.json())
+ // .then((data) => console.log(data))
+	// 	.catch((error) => {
+	// 		console.error("Error:", error);
+	// 	});
+// });
 	return (
 		<><><div className={styles.Nav}>
 			<div className={styles.NavbarContainer}>
@@ -34,10 +33,8 @@ export function Shop() {
 			  <h1 className={styles.menufonts}><Link href = "\shop">Near Me</Link></h1>
 			  <h1 className={styles.menufonts}><Link href = "\shop">What's New?</Link></h1>
 			  <h1 className={styles.signin}><Link href = "\login">Sign-in</Link></h1>
-				<h1 className={styles.menufonts}><button className={styles.sellbtn} onClick={addProducts}>Sell my items</button></h1>
+				<h1 className={styles.menufonts}><button className={styles.sellbtn}><Link href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sell my items</Link></button></h1>
 			</div>
-		</div>
-<div>
 		</div>
 		</><div className={styles.headerimagecontainer}>
 				<div className={styles.btns}>
@@ -63,10 +60,9 @@ export function Shop() {
 			<div className={styles.dropdown}>
 				<button className={styles.dropbtn}>Filters</button>
 				<div className={styles.dropdowncontent}>
-					<Link href="#" onClick={priceascendingProducts}>Price Low to High</Link>
+					<Link href="#">Condition: New to Old</Link>
+					<Link href="#">Price Low to High</Link>
 					<Link href="#">Price High to Low</Link>
-					<Link href="#">New to Old</Link>
-					<Link href="#">Old to New</Link>
 				</div>
 			</div>
 			<div className={styles.dropdown2}>
@@ -78,7 +74,7 @@ export function Shop() {
 			</div>
 			<div>
 				<div className={styles.imagegrid}>
-				 {data.map((product) => (
+					{data.map((product) => (
 						<div key={product.id}>
 							<Image
 								src={`${product.product_picture}`}
@@ -93,7 +89,7 @@ export function Shop() {
 						</div>
 					))}
 				</div>
-			</div><Footer/></>
+			</div></>
 			
 	)
 }

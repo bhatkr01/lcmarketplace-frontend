@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Homemade Apple&display=swap');
 
+
+
+
 @media screen and (max-width:500px) {
     /* For mobile phones: */
 
@@ -55,11 +58,11 @@
             display: none;
         }
         .imageformat{
-            transform: scale(0.8,0.8);
+            transform: scale(0.6,0.6);
         }
         .productlayer{
-            transform: scale(0.8,0.8);
-            margin-top: -171.8px !important;
+            transform: scale(0.6,0.6);
+            margin-top: -217.8px !important;
         }
         .searchbtns{
             margin-left: -20px !important; 
@@ -522,12 +525,9 @@
         padding-top: 120px !important;
     }
  }
- @media screen and (min-width: 829px) and (max-width: 1470px) {
+ @media screen and (min-width: 829px) {
     .imagegrid {
         --num-cols: 2;
-        max-width: 285px;
-        --gap: 107px !important;
-        margin-left: 60px;
     }
     .btn{
         display: none;
@@ -546,7 +546,6 @@
         width: 100%;
         height: 100%;
     }
-    
  }
 
 .productlayer{

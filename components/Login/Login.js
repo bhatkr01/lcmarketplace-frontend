@@ -3,6 +3,9 @@ import styles from "./Login.module.css";
 import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import Navbar from "../../components/Navbar/Navbar.js";
+import Footer from "../../components/Footer/Footer.js";
+
 
 export default function Login() {
 	const router=useRouter()
@@ -34,8 +37,9 @@ export default function Login() {
 	};
 
 	return (
+		<>
 		<main className={styles.main}>
-			<h1><a href="/" className={styles.marketplace}>Luther Marketplace</a></h1>
+			<h1><Link href="/" className={styles.marketplace}>Luther Marketplace</Link></h1>
 			<div className={styles.upperbody}>
 			<div className={styles.welcomebox}>
 			<br></br>
@@ -68,7 +72,7 @@ export default function Login() {
 					onChange={handleChange}
 				/>
 				<label htmlFor="remmeberme" className={styles.checklabel}>Remember Me</label>
-	  <Link className={styles.linklayer1} href="/reset-password">
+	  <Link className={styles.fgpass} href="/reset-password">
 			Forgot Password
 	  </Link>
             	<br></br>
@@ -90,6 +94,8 @@ export default function Login() {
 		<div className={styles.imghalf}>
         	<img className={styles.structure} src="https://ak1.ostkcdn.com/images/products/is/images/direct/99e2126500ab99264a06f7bd2ddf7112a46dcb21/Art-Leon-Mid-century-3-seat-Sofa.jpg"></img>
     	</div>
+		
 		</main>
+		</>
 	);
 }

@@ -16,6 +16,14 @@
 	overflow-x: hidden;
 	border-radius:50px;
 }
+@media screen and (max-width: 500px) {
+    .imghalf{
+        display: none;
+    }
+	.upperbody{
+		width: 100%;
+	}
+ }
 .welcome{
 	font-size:37px;
 	font-weight:bold;
@@ -109,4 +117,31 @@
 	background-color:black;
 	color:white;
 	border-radius:20px
+}
+.first_name{
+	border: 0px;
+	border-bottom: 1px solid black;
+	outline: 1;
+	margin-top:50px;
+	width:39%;
+	font-family: 'Circular Std';
+	font-size: 15.8px;
+}
+.last_name{
+	border: 0px;
+	border-bottom: 1px solid black;
+	outline: 1;
+	margin-top:50px;
+	width:39%;
+	font-family: 'Circular Std';
+	font-size: 15.8px;
+}
+.class_status{
+	border: 0px;
+	border-bottom: 1px solid black;
+	outline: 1;
+	margin-top:50px;
+	width:39%;
+	font-family: 'Circular Std';
+	font-size: 15.8px;
 }

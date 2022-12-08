@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router';
 import Image from 'next/image'
+import Navbar from "../../components/Navbar/Navbar.js";
 
 export default function HomePage() {
   return (
@@ -10,14 +11,13 @@ export default function HomePage() {
 		<div className={styles.Nav}>
 		  <div className={styles.NavbarContainer}>
 			  <div className={styles.NavLogo}>
-				  <a href="/">Luther Marketplace</a>
+				  <Link href="/">Luther Marketplace</Link>
 			  </div>
-			  <h1 className={styles.menufonts}>Explore</h1>
-			  <h1 className={styles.menufonts}>Near Me</h1>
-			  <h1 className={styles.menufonts}>What's New?</h1>
-			  <h1 className={styles.signin}>Sign-in</h1>
-			  <h1 className={styles.sellfonts}><button className={styles.sellbtn}><a href="http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Get Started</a></button></h1>
-			  <h1 className={styles.burgerfont}><button className={styles.burger}><a href="http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Menu</a></button></h1>
+			  <h1 className={styles.menufonts}><Link href = "\shop">Explore</Link></h1>
+			  <h1 className={styles.menufonts}><Link href = "\shop">Near Me</Link></h1>
+			  <h1 className={styles.menufonts}><Link href = "\shop">What's New?</Link></h1>
+			  <h1 className={styles.signin}><Link href = "\login">Sign-in</Link></h1>
+			  <h1 className={styles.sellfonts}><button className={styles.sellbtn}><Link href="/signup" target="_blank">Get Started</Link></button></h1>
 		  </div>
 	  </div>
 	  <div className={styles.midsection}>
@@ -30,20 +30,20 @@ export default function HomePage() {
 				 <h1 className={styles.lutherstate}>
 				  Services that our<br></br> community needs<br></br> most
 			 	</h1>
-				 <h1 className={styles.getstarted}><button className={styles.starter}><a href="http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Get Started</a></button></h1>
+				 <h1 className={styles.getstarted}><button className={styles.starter}><Link href="/login">Login</Link></button></h1>
 	  </div>
 	  <div className={styles.format}>
 	  <div className={styles.backlayerimage}>
-	  <div class={styles.imglayer2}>
+	  <div className={styles.imglayer2}>
 	  </div>
 	  <Link className={styles.linklayer1} href="/login">
 			RideShare
 	  </Link>
 	  </div>
 	  <div className={styles.backlayerimage2}>
-	  <div class={styles.imglayer}>
+	  <div className={styles.imglayer}>
 	  </div>
-	  <Link className={styles.linklayer} href="/shop">
+	  <Link className={styles.linklayer2} href="/shop">
 			Shop 
 	  </Link>
 	  </div>

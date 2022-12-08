@@ -19,7 +19,7 @@
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
@@ -57,6 +57,16 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.NavLogo{
+  color: black;
+  font-size: 18px;
+  display: block !important;
+  font-family: Homemade Apple;
+  /* margin-right: 450px; */
+  /* float: left; */
+  padding-left: 5px;
 }
 
 .code {

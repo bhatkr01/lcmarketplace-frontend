@@ -4,6 +4,10 @@ import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router'
 import useSWR from "swr";
 import Image from 'next/image'
+import Footer from "../../components/Footer/Footer.js";
+import Navbar from "../../components/Navbar/Navbar.js";
+
+
 
 export function AddProducts({data}) {
 	const router=useRouter()
@@ -55,27 +59,14 @@ export function AddProducts({data}) {
 
 	return (
 		<main className={styles.main}>
-			<form>
-				<label htmlFor="author">Author</label>
-				<input
-					type="text"
-					id="author"
-					name="product_author"
-					required
-					onChange={handleChange}
-					value={data?data.product_author:fields.product_author}
-				/>
-				<label htmlFor="name">Name</label>
-				<input
-					type="text"
-					id="name"
-					name="product_name"
-					value={data?data.product_name:fields.product_name}
-					required
-					onChange={handleChange}
-				/>
-				<label htmlFor="picture">Picture</label>
-				<input
+			<Navbar/>
+			<div className={styles.centeralign}>
+			<h1 className={styles.listinglabel}>Create new listing</h1>
+			<h2 className={styles.imagelistinglabel}>Images of your products</h2>
+			<h2 className={styles.sizeparam}>Size must be smaller than 5MB</h2>
+			<form className={styles.input_form}>
+				<div className={styles.img_select}>
+				<input className={styles.fileinput}
 					type="file"
 					id="picture"
 					name="product_picture"
@@ -83,35 +74,27 @@ export function AddProducts({data}) {
 					required
 					onChange={handleChange}
 				/>
-				<label htmlFor="description">Description</label>
-				<input
+				</div>
+				<label className={styles.authlabel} htmlFor="author">Author *</label>
+				<input className={styles.authinput}
 					type="text"
-					id="description"
-					name="product_description"
-					value={data?data.product_description:fields.product_description}
+					id="author"
+					name="product_author"
+					required
+					onChange={handleChange}
+					value={data?data.product_author:fields.product_author}
+				/>
+				<label className={styles.prodlabel} htmlFor="name">Name *</label>
+				<input className={styles.prodinput}
+					type="text"
+					id="name"
+					name="product_name"
+					value={data?data.product_name:fields.product_name}
 					required
 					onChange={handleChange}
 				/>
-				<label htmlFor="condition">Condition</label>
-				<input
-					type="text"
-					id="condition"
-					name="product_condition"
-					required
-					value={data?data.product_condition:fields.product_condition}
-					onChange={handleChange}
-				/>
-				<label htmlFor="action">Action</label>
-				<input
-					type="text"
-					id="action"
-					name="product_action"
-					value={data?data.product_action:fields.product_action}
-					required
-					onChange={handleChange}
-				/>
-				<label htmlFor="price">Price</label>
-				<input
+				<label className={styles.prodpricelabel} htmlFor="price">Price *</label>
+				<input className={styles.prodprice}
 					type="Number"
 					id="price"
 					name="product_price"
@@ -119,8 +102,38 @@ export function AddProducts({data}) {
 					required
 					onChange={handleChange}
 				/>
-				<label htmlFor="date">Date</label>
-				<input
+				<label className={styles.prodcondlabel} htmlFor="condition">Condition *</label>
+				<input className={styles.prodcond}
+					type="text"
+					id="condition"
+					name="product_condition"
+					required
+					value={data?data.product_condition:fields.product_condition}
+					onChange={handleChange}
+				/>
+				<div className={styles.separator}>
+				<label className={styles.prodactionlabel} htmlFor="action">Action *</label>
+				<input className={styles.prodaction}
+					type="text"
+					id="action"
+					name="product_action"
+					value={data?data.product_action:fields.product_action}
+					required
+					onChange={handleChange}
+				/>
+				</div>
+				<label className={styles.proddesclabel} htmlFor="description">Description *</label>
+				<input className={styles.proddesc}
+					type="text"
+					id="description"
+					name="product_description"
+					placeholder="Write a few words about your product..."
+					value={data?data.product_description:''}
+					required
+					onChange={handleChange}
+				/>
+				<label htmlFor="date" className={styles.proddatelabel}>Date *</label>
+				<input className={styles.proddate}
 					type="date"
 					id="date"
 					name="product_date"
@@ -128,10 +141,13 @@ export function AddProducts({data}) {
 					required
 					onChange={handleChange}
 				/>
-				<button type="button" onClick={handleSubmit}>
-					Submit
+				<button className={styles.uploadbtn} type="button" onClick={handleSubmit}>
+					Upload Listing
 				</button>
 			</form>
+			</div>
+			<Footer/>
 		</main>
+		
 	);
 }

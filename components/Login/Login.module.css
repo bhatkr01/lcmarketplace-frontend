@@ -16,6 +16,15 @@
 	overflow-x: hidden;
 	border-radius:50px;
 }
+@media screen and (max-width: 500px) {
+    .imghalf{
+        display: none;
+    }
+	.upperbody{
+		width: 100%;
+		margin-top: 50px;
+	}
+ }
 .welcome{
 	font-size:37px;
 	font-weight:bold;
@@ -36,6 +45,9 @@
 	width:39%;
 	font-family: 'Circular Std';
 	font-size: 15.8px;
+}
+.fgpass{
+	margin-left: 30px;
 }
 
 .password{
