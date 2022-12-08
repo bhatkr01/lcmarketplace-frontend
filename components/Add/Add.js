@@ -1,9 +1,9 @@
-import {AddProducts} from "../../components/Shop";
+import {AddProducts} from "../Shop/";
 import {useRouter} from "next/router";
 import { fetcher } from "../../fetch/";
 import useSWR from "swr";
 
-export default function Addproducts() {
+export default function Add() {
 		const router = useRouter();
 		const { data, error } = useSWR([`products/${router.query.id}`, "GET"], fetcher);
 	if (!data) return "I am loading";

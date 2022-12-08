@@ -44,9 +44,14 @@ function post_fetcher (url,request_method,content_type, data){
 	return fetch(baseURL + url, {
 		method: request_method,
 		headers: 
-		{
+			 content_type!='' ?
+			{"Authorization":localStorage.getItem('access_token')?'JWT '+localStorage.getItem('access_token'):null,
 			"Accept": "application/json",
-			"Content-Type": content_type,}
+			"Content-Type": content_type,}:
+			{
+		"Authorization":localStorage.getItem('access_token')?'JWT '+localStorage.getItem('access_token'):null,
+			"Accept": "application/json",
+		}
 ,	
 		// body: JSON.stringify(data),
 		body: data,
