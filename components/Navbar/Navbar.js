@@ -16,9 +16,9 @@ export default function Privacypolicy() {
 				<div className={styles.NavLogo}>
 					<Link href = "/">Luther Marketplace</Link>
 				</div>
-				<h1 className={styles.menufonts}><Link href = "\shop">What's New?</Link></h1>
-				<h1 className={styles.signin} id="signin"><Link href = "\signin">Login</Link></h1>
-				<h1 className={styles.signin} id="signout"><Link href = "\signin">Logout</Link></h1>
+				<h1 className={styles.menufonts}><Link href = "/shop">What's New?</Link></h1>
+				<h1 className={styles.signin} id="signin"><Link href = "/signin">Login</Link></h1>
+				<h1 className={styles.signin} id="signout"><Link href = "/signin">Logout</Link></h1>
 				<h1 className={styles.menufonts} id="sell"><button className={styles.sellbtn}><Link href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sell my items</Link></button></h1>
 				<h1 className={styles.menufonts} id = "getstarted"><button className={styles.sellbtn} id = "getstarted"><Link href="/signup" target="_blank">Get Started</Link></button></h1>
 			</div>

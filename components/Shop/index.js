@@ -30,9 +30,9 @@ export function Shop() {
 				<div className={styles.NavLogo}>
 					<Link href = "/">Luther Marketplace</Link>
 				</div>
-				<h1 className={styles.menufonts}><Link href = "\shop">What's New?</Link></h1>
-				<h1 className={styles.signin} id="signin"><Link href = "\login">Login</Link></h1>
-				<h1 className={styles.signin} id="signout"><Link href = "\login">Logout</Link></h1>
+				<h1 className={styles.menufonts}><Link href = "/shop">What's New?</Link></h1>
+				<h1 className={styles.signin} id="signin"><Link href = "/login">Login</Link></h1>
+				<h1 className={styles.signin} id="signout"><Link href = "/login">Logout</Link></h1>
 				<h1 className={styles.menufonts} id = "sell"><button className={styles.sellbtn} onClick={addProducts}>Sell my items</button></h1>
 				<h1 className={styles.menufonts} id = "getstarted"><button className={styles.sellbtn} id = "getstarted"><Link href="/signup" target="_blank">Get Started</Link></button></h1>
 			</div>
