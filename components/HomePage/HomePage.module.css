@@ -331,6 +331,16 @@
     border-radius: 51px;
     border: 0px;
 }
+.starter2{
+    width: 124px;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-family: Circular Std;
+    background: #2F8EFE;
+    border-radius: 51px;
+    border: 0px;
+}
 .imglayer{
         background-image: url("https://luthermarketplace.w3spaces.com/images/image_6.png?bypass-cache=15367337");
         height: 246px;

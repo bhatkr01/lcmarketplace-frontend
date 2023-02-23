@@ -456,6 +456,7 @@
     font-size: 14px;
     font-family: Circular Std;
     background: #2F8EFE;
+    z-index: 10000;
     border-radius: 11px;
     border: 0px;
 }
@@ -496,6 +497,9 @@
         width: 100%;
         height: 100%;
     }
+    .hamburger{
+        display: none !important;
+    }
  }
 
 /* Anything under 828px */
@@ -528,6 +532,12 @@
         max-width: 285px;
         --gap: 107px !important;
         margin-left: 60px;
+    }
+    .burgerfont{
+        display: none;
+    }
+    .hamburger{
+        display: none !important;
     }
     .btn{
         display: none;

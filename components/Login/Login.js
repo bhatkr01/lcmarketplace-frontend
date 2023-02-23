@@ -19,7 +19,32 @@ export default function Login() {
 			[e.target.name]: e.target.value,
 		});
 	};
-	
+	// program to remove or display login or logout buttons when appropriate
+	// uses setInterval
+	function login_logout() {
+		if (typeof window !== 'undefined') {
+			// Perform localStorage action
+			const storage = localStorage.getItem('access_token')
+			if (storage !== null && storage !== 'undefined'){
+				var div = document.getElementById('submit1');
+				if (div !== null){
+					div.style.display="block";
+				}
+				var div2 = document.getElementById('submit2');
+				if (div2 !== null){
+					div2.style.display="none";
+					}
+			}
+			else{
+				var div = document.getElementById('submit1');
+				if (div !== null){
+				div.style.display="none";
+				}
+				}
+			}
+		  }
+
+	setInterval(login_logout, 1);
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -27,7 +52,16 @@ export default function Login() {
 		console.log(response);
 		localStorage.setItem('access_token', response.access);
 		localStorage.setItem('refresh_token', response.refresh)
-		router.push('/')
+		if (typeof window !== 'undefined') {
+			const storage = localStorage.getItem('access_token')
+			if (storage !== null && storage !== 'undefined'){
+				router.push('/')
+			}
+			else{
+					document.getElementById("errormsg").innerHTML = 'Invalid email or password. Please try again';
+				}
+		}
+		
 	};
 	const logout = async (event) => {
 		event.preventDefault();
@@ -76,8 +110,11 @@ export default function Login() {
 			Forgot Password
 	  </Link>
             	<br></br>
-				<button className={styles.submit} type="button" onClick={handleSubmit}>
+				<button className={styles.submit2} type="button" id= "submit2" onClick={handleSubmit}>
 					Sign in
+				</button>
+				<button className={styles.submit1} id= "submit1" type="button" onClick={logout}>
+					Logout
 				</button>
             	<h4 className={styles.h4txt}>Don't have an account?
 
@@ -85,12 +122,10 @@ export default function Login() {
 			Create an account
 	  </Link>
 		</h4>
+			<div className={styles.errormsg} id="errormsg"></div>
 			</form>
 			</div>
-				<button className={styles.submit} type="button" onClick={logout}>
-					Logout
-				</button>
-        </div>
+        	</div>
 		<div className={styles.imghalf}>
         	<img className={styles.structure} src="https://ak1.ostkcdn.com/images/products/is/images/direct/99e2126500ab99264a06f7bd2ddf7112a46dcb21/Art-Leon-Mid-century-3-seat-Sofa.jpg"></img>
     	</div>

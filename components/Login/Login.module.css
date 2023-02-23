@@ -114,11 +114,25 @@
 	text-decoration:none;
 	color:#7CB9E8
 }
-.submit{
+.submit1{
+	margin-top:50px;
+	width:39.5%;
+	height:30px;
+	background-color:black;
+	color:white;
+	border-radius:20px;
+	display:none;
+	margin:auto;
+	margin-top: 25px;
+}
+.submit2{
 	margin-top:50px;
 	width:39.5%;
 	height:30px;
 	background-color:black;
 	color:white;
 	border-radius:20px
+}
+.errormsg{
+	color: red;
 }
