@@ -11,19 +11,27 @@ export default function Privacypolicy() {
 	const router=useRouter()
 	return (
 	<>
-		<div className={styles.Nav}>
-			<div className={styles.NavbarContainer}>
-				<div className={styles.NavLogo}>
-					<Link href = "/">Luther Marketplace</Link>
-				</div>
-				<h1 className={styles.menufonts}><Link href = "/shop">What's New?</Link></h1>
-				<h1 className={styles.signin} id="signin"><Link href = "/signin">Login</Link></h1>
-				<h1 className={styles.signin} id="signout"><Link href = "/signin">Logout</Link></h1>
-				<h1 className={styles.menufonts} id="sell"><button className={styles.sellbtn}><Link href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sell my items</Link></button></h1>
-				<h1 className={styles.menufonts} id = "getstarted"><button className={styles.sellbtn} id = "getstarted"><Link href="/signup" target="_blank">Get Started</Link></button></h1>
+	<div className={styles.Nav}>
+		<div className={styles.NavbarContainer}>
+			<div className={styles.NavLogo}>
+				<a href = "/">Luther Marketplace</a>
 			</div>
+			<div className={styles.NavPageContainer}>
+				<a className={styles.NavPage} href = "/">About</a>
+				<a className={styles.NavPage}>Policy</a>
+				<a className={styles.NavPage}>Terms of Use</a>
+			</div>
+			<div className={styles.NavSignInPrompt}>
+				<div>Sign-in to buy/sell products </div>
+				<div className={styles.NavSignInPromptArrow}> → </div>
+			</div>
+			<h1 className={styles.menufonts}><button className={styles.sellbtn}><a href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sign In</a></button></h1>
 		</div>
-		</>
+		<button class={`${styles.HamburgerButton}`}>
+			<div class={`${styles.HamburgerBar}`}></div>
+		</button>
+	</div>
+	</>
 	);
 }
 function sign() {

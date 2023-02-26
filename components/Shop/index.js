@@ -3,6 +3,7 @@ import styles from "./Shop.module.css";
 import {fetcher} from "../../fetch/";
 import { useRouter } from 'next/router'
 import useSWR from "swr";
+import { useEffect } from "react";
 import Image from 'next/image'
 import AddProducts from "./AddProducts.js";
 import Link from 'next/link'
@@ -26,76 +27,92 @@ export function Shop() {
 
 	return (
 		<><><div className={styles.Nav}>
-			<div className={styles.NavbarContainer}>
-				<div className={styles.NavLogo}>
-					<Link href = "/">Luther Marketplace</Link>
-				</div>
-				<h1 className={styles.menufonts}><Link href = "/shop">What's New?</Link></h1>
-				<h1 className={styles.signin} id="signin"><Link href = "/login">Login</Link></h1>
-				<h1 className={styles.signin} id="signout"><Link href = "/login">Logout</Link></h1>
-				<h1 className={styles.menufonts} id = "sell"><button className={styles.sellbtn} onClick={addProducts}>Sell my items</button></h1>
-				<h1 className={styles.menufonts} id = "getstarted"><button className={styles.sellbtn} id = "getstarted"><Link href="/signup" target="_blank">Get Started</Link></button></h1>
+		<div className={styles.NavbarContainer}>
+			<div className={styles.NavLogo}>
+				<a href = "/">Luther Marketplace</a>
 			</div>
+			<div className={styles.NavPageContainer}>
+				<a className={styles.NavPage} href = "/">About</a>
+				<a className={styles.NavPage}>Policy</a>
+				<a className={styles.NavPage}>Terms of Use</a>
+			</div>
+			<div className={styles.NavSignInPrompt}>
+				<div>Sign-in to buy/sell products </div>
+				<div className={styles.NavSignInPromptArrow}> → </div>
+			</div>
+			<h1 className={styles.menufonts}><button className={styles.sellbtn}><a href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sign In</a></button></h1>
 		</div>
-<div>
+		<button className={styles.HamburgerButton} id="HamBtn">
+			<div className={styles.HamburgerBar}></div>
+		</button>
 		</div>
 		</><div className={styles.headerimagecontainer}>
-				<div className={styles.btns}>
-					<button className={styles.btn}>Discover</button>
-					<button className={styles.btn}>Furniture</button>
-					<button className={styles.btn}>Electronics</button>
-					<button className={styles.btn}>Books</button>
-					<button className={styles.btn}>Appliances</button>
-					<button className={styles.btn}>Kitchen</button>
-					<button className={styles.btn}>Decor</button>
-					<button className={styles.btn}>Clothing</button>
-				</div>
 				<div className={styles.textheader}>
+					<br></br>
+					<br></br>
+					<br></br>
+					<br></br>
 					<h1 className={styles.parentheadtext}>Find out what the <br></br>community is selling</h1>
-					<h3 className={styles.subheadtext}>Millions of people trust Luther Marketplace everyday<br></br>Explore and get the goods you need for cheap</h3>
+					<h3 className={styles.subheadtext}>Your friends and professors trust Luther Marketplace everyday.<br></br>Explore and get the goods you need for cheap.</h3>
 				</div>
-				<div className={styles.searchbtns}>
+				<div className={styles.searchbar}>
 					<form method="get" action="">
-						<input className={styles.btn} type="text" placeholder="Search" required></input>
+						<input className={styles.searchfield} type="text" placeholder="Search" required></input>
 					</form>
 				</div>
 			</div>
-			<div className={styles.dropdown}>
-				<button className={styles.dropbtn}>Filters</button>
-				<div className={styles.dropdowncontent}>
-					<Link href="#" onClick={priceascendingProducts}>Price Low to High</Link>
-					<Link href="#">Price High to Low</Link>
-					<Link href="#">New to Old</Link>
-					<Link href="#">Old to New</Link>
+			<div className={styles.dropdowncontainer}>
+				<div className={styles.dropdown}>
+					<button className={styles.dropbtn}>Sort Products</button>
+					<div className={styles.dropdowncontent}>
+						<Link href="#" onClick={priceascendingProducts}>Price: Low to High</Link>
+						<Link href="#">Price: High to Low</Link>
+						<Link href="#">Condition: New to Old</Link>
+						<Link href="#">Condition: Old to New</Link>
+					</div>
+				</div>
+				<div className={styles.dropdown2}>
+					<button className={styles.dropbtn2}>Popularity</button>
+					<div className={styles.dropdowncontent2}>
+						<Link href="#">High to Low</Link>
+						<Link href="#">Low to High</Link>
+					</div>
 				</div>
 			</div>
-			<div className={styles.dropdown2}>
-				<button className={styles.dropbtn2}>Popular</button>
-				<div className={styles.dropdowncontent2}>
-					<Link href="#">High to Low</Link>
-					<Link href="#">Low to High</Link>
-				</div>
-			</div>
-			<div>
-				<div className={styles.imagegrid}>
-				 {data.map((product) => (
-						<div key={product.id}>
-							<Image
-								src={`${product.product_picture}`}
-								width={500}
-								height={500} className={styles.imageformat}/>
-							<div className={styles.productlayer}>
-								<p className = {styles.productdescription}>{product.product_description}</p>
-								<p className = {styles.condbtn}><h1 className = {styles.condbtntxt}>{product.product_condition}</h1></p>
-							    <p className = {styles.pricebtn}>${product.product_price}</p>
+
+
+			<div className={styles.productgrid}>
+				{data.map((product) => (
+					<a href='/' className={styles.productlinkbox}>
+						<div className={styles.productcard} key={product.id}>
+							<Image src={`${product.product_picture}`} width={500} height={500} className={styles.productimage}/>	
+							<div className={styles.productcontent}>
+								<div>
+									<div className={styles.productdetails}>
+										<span>{product.product_description}</span>									
+									</div>
+									<div className = {styles.productcondition}>
+										<p className = {styles.productconditiontext}>{product.product_condition}</p>
+									</div>	
+									<div className={styles.productbio}>
+										Lorem ipsum dolor sit amet, consectetur adipiscicupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</div>
+								</div>
+								<div className={styles.productprice}>
+									${product.product_price}
+								</div>
 							</div>
-							
 						</div>
-					))}
-				</div>
-			</div><Footer/></>
+					</a>
+				))}
+			</div>
+			
+			
+			<Footer/></>
 			
 	)
+
+	
 }
 
 function shop_nav_sign() {
@@ -153,5 +170,22 @@ function add_or_get_started() {
 	  }
 
 setInterval(add_or_get_started, 1);
+
+
+if (typeof window !== "undefined") {
+	var hamburgerbtn = document.getElementById('HamBtn');
+	//const nav_menu = document.querySelector(`.${styles.mobilenav}`)
+	if (hamburgerbtn) {
+		console.log("FOUND");
+		hamburgerbtn.addEventListener("click", function () {
+			console.log("here");
+			hamburgerbtn.classList.add(`${styles.isactive}`);
+			console.log(hamburgerbtn);
+			});
+			//nav_menu.classList.toggle(`${styles.isactive}`);
+			
+		;}
+	else {console.log("Not Found");}
+}
 
 
