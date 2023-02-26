@@ -8,6 +8,7 @@ import Image from 'next/image'
 import AddProducts from "./AddProducts.js";
 import Link from 'next/link'
 import Footer from "../../components/Footer/Footer.js";
+import Navbar from "../../components/Navbar/Navbar.js";
 
 export function Shop() {
 	const router=useRouter()
@@ -26,26 +27,9 @@ export function Shop() {
 	};
 
 	return (
-		<><><div className={styles.Nav}>
-		<div className={styles.NavbarContainer}>
-			<div className={styles.NavLogo}>
-				<a href = "/">Luther Marketplace</a>
-			</div>
-			<div className={styles.NavPageContainer}>
-				<a className={styles.NavPage} href = "/">About</a>
-				<a className={styles.NavPage}>Policy</a>
-				<a className={styles.NavPage}>Terms of Use</a>
-			</div>
-			<div className={styles.NavSignInPrompt}>
-				<div>Sign-in to buy/sell products </div>
-				<div className={styles.NavSignInPromptArrow}> → </div>
-			</div>
-			<h1 className={styles.menufonts}><button className={styles.sellbtn}><a href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sign In</a></button></h1>
-		</div>
-		<button className={styles.HamburgerButton} id="HamBtn">
-			<div className={styles.HamburgerBar}></div>
-		</button>
-		</div>
+		<><>
+		<Navbar/>
+
 		</><div className={styles.headerimagecontainer}>
 				<div className={styles.textheader}>
 					<br></br>
