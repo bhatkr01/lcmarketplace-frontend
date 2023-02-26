@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade Apple&display=swap');
+
+.Nav{
+    background: white;
+    height: 60px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    @media screen and (max-width:960px){
+        transition: 0.8s all ease;
+    }
+}
+.centeralign {
+    padding: 0 2rem;
+}
+@media screen and (max-width: 500px) {
+    .centeralign{
+        transform: scale(0.7,0.7);
+        display: block !important;
+        margin-top: -278px;
+        margin-left: -19px;
+    }
+ }
+.policy{
+    min-height: 100vh;
+    padding: 4rem 0;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 650px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.8;
+    font-weight: 200;
+}
+.update{
+    margin-top: -15px ;
+    opacity: 0.5;
+}
+.centeralign {
+    min-height: 100vh;
+    padding: 4rem 0;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .NavbarContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    z-index: 1;
+    width: 100%;
+    /* padding: 0 24px; */
+    align-items: center;
+}
+.NavLogo{
+    color: black;
+    justify-self: flex-start;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    text-decoration: none;
+    font-family: Homemade Apple;
+}
+.menufonts{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787;
+}
+.signin{
+    font-family: Circular Std;
+    font-weight:540;
+    font-size: 17px;
+    color: #878787
+}
+.sellbtn{
+    width: 124px;
+    height: 37px;
+    color: white;
+    font-size: 14px;
+    font-family: Circular Std;
+    background: #2F8EFE;
+    border-radius: 11px;
+    border: 0px;
+}
+
+.productcontainer {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 10% 50px 10%;
+    overflow: hidden;
+    gap: 40px;
+}
+
+.productmainimage {
+    overflow: hidden;
+    object-fit: fill;
+    flex-basis: 100%;
+}
+
+.productmainphoto {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.productcategory {
+    color: #9f9f9f;
+    font-weight: 300;
+}
+
+.producttitle {
+    padding-top: 15px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.productprice {
+    font-family: Circular Std;
+    padding-top: 15px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.contactbutton {
+    font-family: Circular Std;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    width: 130px;
+    color: white;
+    background-color: #2F8EFE;
+    border: 0px;
+    padding: 12px 0px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.contactbutton:hover {
+    box-shadow: 0px 0px 10px 0px #2F8EFE;
+    transition: 0.4s;
+}
+
+.productcondition {
+    display:inline;
+    width: 100px;
+    margin-top: 10px;
+    padding: 11px 9px;
+    font-size: 10px;
+    font-weight: 700;
+    background-color: white;
+    text-align: center;
+    line-height: 0px;
+    color: #2F8EFE;
+    border: 1px solid;
+    border-color: #2F8EFE;
+    border-radius: 20px;
+}
+
+.productconditiontext {
+    margin: 0px;
+}
+
+.productdetailsheading {
+    font-family: Circular Std;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #4b4b4b;
+}
+
+.productdetails {
+    color: #5e5e5e;
+    font-family: Circular Std;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    font-weight: 200;
+}

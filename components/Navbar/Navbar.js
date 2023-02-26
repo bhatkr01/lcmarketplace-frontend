@@ -22,18 +22,24 @@ export default function Privacypolicy() {
 				<a className={styles.NavPage}>Terms of Use</a>
 			</div>
 
-			{/*Switch display of this nav to 'none' upon login*/}
+			{/*
+			TO-DO
+			Switch display of this nav to 'none' upon login*/}
 			<div className={styles.NavSignInPrompt}>
 				<div>Sign-in to buy/sell products </div>
 				<div className={styles.NavSignInPromptArrow}> → </div>
 			</div>
 
-			{/*Switch display of this nav to 'block' upon login*/}
+			{/*
+			TO-DO
+			Switch display of this nav to 'block' upon login*/}
 			<div className={styles.NavSignOut}>
 				<a href= "/"><div>Sign-out</div></a>
 			</div>
 
-			{/*Switch out Inner HTML of this button to Sell Items upon login*/}
+			{/*
+			TO-DO
+			Switch out Inner HTML of this button to Sell Items upon login*/}
 			<div className={styles.menufonts}><button className={styles.sellbtn}><a href = "http://10.28.164.119:8000/admin/products/product/add/" target="_blank">Sign In</a></button></div>
 		</div>
 		<button class={`${styles.HamburgerButton}`}>

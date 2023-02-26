@@ -600,40 +600,6 @@
     transition: 0.5s ease all;
     text-align: center;
 }
-.condbtn {
-    background-color: #f1f1f1;
-    display: inline-flex;
-    height: 35px;
-    width: 100px;
-    color: black;
-    font-size: 12.1px;
-    border: none;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 30px;
-    align-items: center;
-    margin-top: -50px;
-}
-.condbtn span {
-    position: absolute;
-    /* changed to 48 from 68 */
-    top: 68px;
-    left: 43px;
-    display: block;
-    width: 45px;
-    height: 15px;
-    background-color: transparent;
-    border-radius: 10px;
-    transform: rotateZ(52deg);
-    transition: 0.5s ease all;}
-
-.condbtntxt{
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    margin: 0 auto;
-    font-size: 14px;
-}
 
 .pricebtn {
     background-color: none;
