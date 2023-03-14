@@ -67,19 +67,23 @@ export function Shop() {
 
 			<div className={styles.productgrid}>
 				{data.map((product) => (
-					<a href='/' className={styles.productlinkbox}>
+					<>
+					
+					<Link className={styles.productlinkbox} href={`/shop/${product.id}`}>
+					
+					
 						<div className={styles.productcard} key={product.id}>
 							<Image src={`${product.product_picture}`} width={500} height={500} className={styles.productimage}/>	
 							<div className={styles.productcontent}>
 								<div>
 									<div className={styles.productdetails}>
-										<span>{product.product_description}</span>									
+										<span>{product.product_name}</span>									
 									</div>
 									<div className = {styles.productcondition}>
 										<p className = {styles.productconditiontext}>{product.product_condition}</p>
 									</div>	
 									<div className={styles.productbio}>
-										Lorem ipsum dolor sit amet, consectetur adipiscicupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+										{product.product_description}
 									</div>
 								</div>
 								<div className={styles.productprice}>
@@ -87,7 +91,9 @@ export function Shop() {
 								</div>
 							</div>
 						</div>
-					</a>
+					
+				  </Link>
+					</>
 				))}
 			</div>
 			
