@@ -32,7 +32,7 @@ export default function HomePage() {
 				 <h1 className={styles.getstarted}><button className={styles.starter} id= "starter"><Link href="/login">Login</Link></button></h1>
 				 <h1 className={styles.getstarted}><button className={styles.starter2} id= "starter2"><Link href="/login">Logout</Link></button></h1>
 	  </div>
-	  <div className={styles.format}>
+	  <div className={styles.format}id ="format">
 	  <div className={styles.backlayerimage}>
 	  <div className={styles.imglayer2}>
 	  </div>
@@ -95,6 +95,10 @@ function nav_sign() {
 			if (div !== null){
 				div.style.display="block";
 			}
+			var div3 = document.getElementById('format');
+			if (div3 !== null){
+				div3.style.display="block";
+			}
 			var div2 = document.getElementById('signin');
 			if (div2 !== null){
 				div2.style.display="none";
@@ -108,6 +112,10 @@ function nav_sign() {
 			var div2 = document.getElementById('signout');
 			if (div2 !== null){
 			div2.style.display="none";
+			}
+			var div3 = document.getElementById('format');
+			if (div3 !== null){
+				div3.style.display="none";
 			}
 			}
 		}

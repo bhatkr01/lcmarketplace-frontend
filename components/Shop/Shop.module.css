@@ -177,6 +177,7 @@
     border-radius:30px;
     border:1px solid #dcdcdc;
     background-color: white;
+    display: none;
 }
 
 .searchbar:hover{
@@ -653,7 +654,7 @@
   
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: none;
     text-align: center;
     align-items: center;
 }
@@ -712,7 +713,7 @@
   
 .dropdown2 {
     position: relative;
-    display: inline-block;
+    display: none;
     text-align: center;
     align-items: center;
 }

@@ -5,6 +5,10 @@ import Image from 'next/image'
 import Navbar from "../../components/Navbar/Navbar.js";
 import styles from "./[id].module.css";
 import Footer from "../../components/Footer/Footer.js";
+import Link from 'next/link'
+import jwt_decode from "jwt-decode";
+import { useState, useEffect } from "react";
+
 
 const Post = () => {
 	const router = useRouter();
@@ -22,7 +26,6 @@ const Post = () => {
 	};
 	const deleteProduct = (event) => {
 		event.preventDefault();
-
 		const response = fetcher(`products/${id}`, "DELETE", '','');
 		router.push({
 			pathname:'/shop',
@@ -44,8 +47,10 @@ const Post = () => {
 				<div className = {styles.productcondition}>
 					<p className = {styles.productconditiontext}>USED-GOOD</p>
 				</div>
-				<div className={styles.productprice}>$50.00</div>
-				<button className={styles.contactbutton}>Contact Seller</button>
+				<div className={styles.productprice}>{data.product_price}</div>
+				<Link href={`mailto:bhatkr01@luther.edu`}><button className={styles.contactbutton}>Contact Seller</button></Link>
+				{/* <button className={styles.contactbutton}  onClick={deleteProduct}>Delete Product</button>
+				<button className={styles.contactbutton}  onClick={editProduct}>Edit Product</button> */}
 				<div className={styles.productdetailsheading}>
 					Product Details: 
 				</div>

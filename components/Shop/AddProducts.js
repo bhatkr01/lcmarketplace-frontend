@@ -80,6 +80,7 @@ export function AddProducts({data}) {
 					type="text"
 					id="author"
 					name="product_author"
+					placeholder="1"
 					required
 					onChange={handleChange}
 					value={data?data.product_author:fields.product_author}
@@ -128,7 +129,7 @@ export function AddProducts({data}) {
 					id="description"
 					name="product_description"
 					placeholder="Write a few words about your product..."
-					value={data?data.product_description:''}
+					value={data?data.product_description:fields.product_description}
 					required
 					onChange={handleChange}
 				/>

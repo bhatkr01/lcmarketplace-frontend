@@ -483,4 +483,35 @@
          .sellbtn {
          display: none;
          }
+
+         .NavSignOut{
+            display: none;
+         }
+
+         .signout{
+            display: none;
+         }
+}
+
+.signout{
+    /* flex: 1 1 auto; */
+    margin-right: 20px;
+    padding: 10px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: none;
+    font-size: 13.5px;
+}
+
+.signout:hover {
+    background-position: right center;
+  }
+
+.signout {
+    background-image: linear-gradient(to right, #2F8EFE 0%, #1dd6b4 51%, #2F8EFE 100%);
 }

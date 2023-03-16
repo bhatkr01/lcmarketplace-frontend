@@ -2,8 +2,10 @@ import jwt_decode from "jwt-decode";
 import { useState, useEffect } from "react";
 import { fetcher } from "../../fetch/";
 import useSWR from "swr";
-
+import styles from "../Shop/Shop.module.css";
+import Link from 'next/link'
 import Image from 'next/image'
+import Navbar from "../../components/Navbar/Navbar.js";
 
 export default function UserProfile() {
 	const [user_id, setUser_id] = useState(0)
@@ -27,28 +29,54 @@ console.log(user)
 
 	return (
 		<>
-		
-		<h1>hi {user_id}</h1>
-		<h1>hi {user.email}</h1>
+		<Navbar/>
+		{/* <h1>hi {user_id}</h1> */}
+		{/* <h1>Welcome Back {user.email} !</h1> */}
+		<br></br>
+		<br></br>
+		<br></br>
+		<div className={styles.textheader}>
+		<h1>Welcome Back {user.first_name} !</h1>
+		<h2 className={styles.menufonts}>These are the items you have listed on Luther Marketplace</h2>
+		</div>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<div className={styles.productgrid}>
 		{products.map((product)=>(
-
-			<div key={product.id}>
-			{product.product_author==user_id?
-				<>
-				<Image
-		src={`${product.product_picture}`}
-					width={500}
-					height={500} />
-			<p >{product.product_description}</p>
-		<p ><h1>{product.product_condition}</h1></p>
-		    <p >{product.product_price}</p>
-
-				</>
-				:""}
 			
-						</div>
+			<Link className={styles.productlinkbox} href={`/shop/${product.id}`}>
+			<div key={product.id} className={styles.productcard}>
+			{product.product_author==user_id?
+				<><Image
+							src={`${product.product_picture}`}
+							width={500}
+							height={500} className={styles.productimage} /><div className={styles.productcontent}>
+								<div>
+									<div className={styles.productdetails}>
+										<span>{product.product_name}</span>
+									</div>
+									<div className={styles.productcondition}>
+										<p className={styles.productconditiontext}>{product.product_condition}</p>
+									</div>
+									<div className={styles.productbio}>
+										{product.product_description}
+									</div>
+								</div>
+								<div className={styles.productprice}>
+									${product.product_price}
+								</div>
+							</div></>
+				
+				:""} </div>
+						</Link>
+						
 					))}
+		</div>			
 		</>
+		
 			
 	)
 }
